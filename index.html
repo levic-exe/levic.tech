@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/clippyjs/build/clippy.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/jquery@3.2.1"></script>
+    <script src="/clippyjs/build/clippy.js"></script>
+    <script src="/stuff/webamp.js" type="module"></script>
+    <script src="script.js" defer></script> <!-- defer so it runs after DOM is ready -->
+</head>
+<body onload="pageLoaded()">
+    <div id="webamp-container" style="height: 0px;"></div>
+    <div class="big-div">
+        <div class="card">
+            <div class="card-header">
+                <h4>hi, i'm levi</h4>
+            </div>
+            <div class="card-body">
+                <p>i like to program and use linux</p>
+                <div class="another-div-im-going-insane">
+                    <div class="clock">
+                        <h1 id="user-time" class="time">loading...</h1>
+                        <p>your current time:</p>
+                    </div>
+                    <div class="clock">
+                        <h1 id="my-time" class="time">loading...</h1>
+                        <p>my current time:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -10,7 +10,7 @@ clippy.Agent = function (path, data, sounds) {
 
     this._queue = new clippy.Queue($.proxy(this._onQueueEmpty, this));
 
-    this._el = $('<div class="clippy"></div>').hide();
+    this._el = $('<button onclick="clippyClicked()" class="clippy"></button>').hide();
 
     $(document.body).append(this._el);
 
@@ -179,7 +179,6 @@ clippy.Agent.prototype = {
             this._balloon.speak(complete, text, hold);
         }, this);
     },
-
 
     /***
      * Close the current balloon
@@ -387,18 +386,7 @@ clippy.Agent.prototype = {
     /**************************** Drag ************************************/
 
     _startDrag:function (e) {
-        // pause animations
-        this.pause();
-        this._balloon.hide(true);
-        this._offset = this._calculateClickOffset(e);
 
-        this._moveHandle = $.proxy(this._dragMove, this);
-        this._upHandle = $.proxy(this._finishDrag, this);
-
-        $(window).on('mousemove', this._moveHandle);
-        $(window).on('mouseup', this._upHandle);
-
-        this._dragUpdateLoop = window.setTimeout($.proxy(this._updateLocation, this), 10);
     },
 
     _calculateClickOffset:function (e) {
@@ -664,11 +652,11 @@ clippy.Balloon = function (targetEl) {
 clippy.Balloon.prototype = {
 
     WORD_SPEAK_TIME:0,
-    CLOSE_BALLOON_DELAY:2000,
+    CLOSE_BALLOON_DELAY:0,
 
     _setup:function () {
 
-        this._balloon = $('<div class="clippy-balloon"><div class="clippy-tip"></div><div class="clippy-content"></div></div> ').hide();
+        this._balloon = $('<div id="balloonthingy" class="clippy-balloon"><div class="clippy-tip"></div><div id="clippycontentstuff" class="clippy-content"></div></div> ').hide();
         this._content = this._balloon.find('.clippy-content');
 
         $(document.body).append(this._balloon);
@@ -790,6 +778,7 @@ clippy.Balloon.prototype = {
         this._hidden = true;
         this._hiding = null;
     },
+
     _sayWords: function (text, hold, complete) {
         this._active = true;
         this._hold = hold;
@@ -797,24 +786,7 @@ clippy.Balloon.prototype = {
 
         // Insert HTML content immediately
         el.html(text);
-
-        // Fake the original's "typing loop" just to keep Clippy active
-        let ticks = 5; // number of forced redraws
-        const tick = () => {
-            if (!this._active) return;
-            this.reposition(); // recalculates position & forces balloon paint
-            if (--ticks > 0) {
-                setTimeout(tick, this.WORD_SPEAK_TIME / 2); // quick refresh
-            } else if (!this._hold) {
-                this._active = false;
-                complete();
-                this.hide();
-            }
-        };
-
-        tick();
     },
-
 
     close:function () {
         if (this._active) {

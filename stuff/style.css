@@ -10,6 +10,7 @@
     font-family: "MS Sans Serif";
     src: url("/stuff/Microsoft Sans Serif V2.woff2")
 }
+
 .clock {
     display: inline-block;
 
@@ -36,9 +37,8 @@
 
   #webamp-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
+    bottom: 100%;
+    left: 0%;
   }
 
 a {
@@ -60,12 +60,33 @@ button {
     padding-bottom: 15px;
 }
 
+.centerts {
+    /* centers ts */
+    display: flex;
+    justify-content: center;
+}
 
+.blahblah {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
 
+.blahblah2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
 
+.big-div-2 {
+    width: 315px;
+    margin: auto;
+}
 
-
-
+.dumbass-button-wrapper {
+    /* all this to center ONE BUTTON`*/
+    text-align: center;
+}
 /*
 
     i used (stole) some styles from this repo 
@@ -165,7 +186,6 @@ Scrollbar (only chrome & safari)
     -webkit-transform: rotateY(-90deg);
     transform: rotateY(-90deg);
     border: 1px outset #fff;
-    border-shadow: 1px 1px #000;
 }
 ::-webkit-scrollbar-button:vertical:decrement {
     width: 11px;
@@ -175,14 +195,12 @@ Scrollbar (only chrome & safari)
     transform: rotateX(180deg);
     -webkit-transform: rotateY(180deg);
     border: 1px outset #fff;
-    border-shadow: 1px 1px #000
 }
 ::-webkit-scrollbar-track{
     background-image: url(background.bmp)
 }
 ::-webkit-scrollbar-thumb:vertical {
     border: 1px outset #fff;
-    border-shadow: 1px 1px #000;
     height: 40px;
     background-color: silver
 }
@@ -207,7 +225,6 @@ Scrollbar (only chrome & safari)
     height: 18px;
     margin: 1px 1px 1px 10px;
     border: 1px outset #fff;
-    border-shadow: 1px 1px #000
 }
 ::-webkit-scrollbar-button:horizontal:decrement {
     background: silver url(comboleft.png) no-repeat 50%;
@@ -219,7 +236,6 @@ Scrollbar (only chrome & safari)
 }
 ::-webkit-scrollbar-thumb:horizontal {
     border: 1px outset #fff;
-    border-shadow: 1px 1px #000;
     height: 40px;
     background-color: silver
 }
@@ -237,23 +253,10 @@ Scrollbar (only chrome & safari)
     border-bottom-color: #424242;
     background: silver;
     color: black;
-    padding: 0 0 4px;
-    border-radius: 1px;
+    padding: 2px 14px 2px 14px;
+    position: absolute;
 }
-.btn:hover {
-    border: 2px inset #fff;
-    background: silver;
-    color: #424242;
-    box-shadow: -1px -1px #000;
-}
-.btn:focus {
-    border: 2px inset #fff !important;
-    background: silver;
-    color: #424242;
-    box-shadow: -1px -1px #000 !important;
-    outline: 0 !important;
-    background: url(background.bmp);
-}
+
 .btn:active {
     border: 2px inset #fff !important;
     color: #424242;
@@ -266,9 +269,7 @@ Scrollbar (only chrome & safari)
     padding-left: 8px;
     padding-right: 8px;
 }
-button:focus{
-    outline: 1px dotted;
-}
+
 .btn.disabled,.btn:disabled{
     cursor: default;
     background-color: silver;
@@ -303,6 +304,19 @@ p{
     background: silver;
     color:#212529;
 }
+
+.card-smaller{
+    border: solid;
+    border-width: 2px;
+    border-bottom-color: #424242;
+    border-right-color: #424242;
+    border-left-color: #fff;
+    border-top-color: #fff;
+    background: silver;
+    color:#212529;
+    margin: 0 auto;
+}
+
 .card.square{
     border-radius: 0px;
 }

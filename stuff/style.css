@@ -6,15 +6,13 @@
   font-family: MSW98UI-Bold;
   src: url(/stuff/MSW98UI-Bold.woff2);
 }
-@font-face {
-    font-family: "MS Sans Serif";
-    src: url("/stuff/Microsoft Sans Serif V2.woff2")
-}
+
 
 .clock {
     display: inline-block;
 
 }
+
 
 .another-div-im-going-insane {
     text-align: center;
@@ -28,6 +26,18 @@
     outline: 0 !important;
     margin: 5px;
     padding: 0;
+    background-color: #AFAFAF;
+
+}
+
+.depressed-box-thing {
+    border: 2px inset #fff !important;
+    color: #424242;
+    box-shadow: -1px -1px #000 !important;
+    outline: 0 !important;
+    margin: 5px;
+    padding: 0;
+    background-color: #AFAFAF;
 }
 
 .big-div {
@@ -54,6 +64,8 @@ button {
     border: 1px solid #c1c1c1;
     border-radius: 3px;
     width: 75px;
+    display: block;
+    margin: 5px;
 }
 
 #clippy-text {

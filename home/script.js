@@ -2,6 +2,8 @@ let agentInstance;
 let agentName = 'Clippy';
 let thegoddamnballoonishidden = true; 
 let nav = `<p id="clippy-text">Hi, i'm Clippy. Where do you want to go today? </p>
+<button class="clippy-button" onclick="window.location.href='/blog/'">Levi's blog</button>
+<button class="clippy-button" onclick="window.location.href='https://github.com/levic-exe/website'">See this site's code!</button>
 <button class="clippy-button" onclick="clippyByeBye()">Go away!!!</button>`
 
 clippy.load(agentName, agent => {
@@ -23,9 +25,6 @@ function clippyClicked() {
         thegoddamnballoonishidden = false
         document.getElementById("clippycontentstuff").innerHTML = nav
         agentInstance._balloon.show();
-    }
-    else {
-        console.log("clippys dead none of this is real clippy was never real its the mandela effect");
     }
 }
 

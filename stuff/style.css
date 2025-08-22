@@ -13,6 +13,14 @@
 
 }
 
+.photos256 img {
+    height: 256px;
+    border: 2px inset #fff !important;
+    box-shadow: -1px -1px #000 !important;
+    outline: 0 !important;
+    margin: 5px;
+    padding: 0;
+}
 
 .another-div-im-going-insane {
     text-align: center;
